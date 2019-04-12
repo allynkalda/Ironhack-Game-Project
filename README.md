@@ -13,27 +13,27 @@ Objects that add more life to the character.
 
 ## Data structure
 <h4>Main</h4>
-- Building Splash Screen
-- Building Game Screen
-- Building Game Over Screen
+- Building Splash Screen</br>
+- Building Game Screen</br>
+- Building Game Over Screen</br>
 <h4>Game</h4>
-- properties: player, obstacles, canvas, context, gameOver
-- Start Loop
-- Clear Canvas
-- Update Canvas
-- Draw Canvas
-- Check Collisions
+- properties: player, obstacles, canvas, context, gameOver</br>
+- Start Loop</br>
+- Clear Canvas</br>
+- Update Canvas</br>
+- Draw Canvas</br>
+- Check Collisions</br>
 <h4>Player</h4>
-- properties: player, obstacles, canvas, context, gameOver, x, y, direction, speed, size
-- Draw canvas
-- Update Canvas
-- Set Direction
-- Set Lives
-- Check Collisions
+- properties: player, obstacles, canvas, context, gameOver, x, y, direction, speed, size</br>
+- Draw canvas</br>
+- Update Canvas</br>
+- Set Direction</br>
+- Set Lives</br>
+- Check Collisions</br>
 <h4>Obstancles</h4>
-- properties: canvas, context, gameOver, x, y, direction, speed, size
-- Draw canvas
-- Update Canvas
+- properties: canvas, context, gameOver, x, y, direction, speed, size</br>
+- Draw canvas</br>
+- Update Canvas</br>
 
 ## States y States Transitions
 
