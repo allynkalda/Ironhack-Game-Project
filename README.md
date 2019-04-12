@@ -12,25 +12,25 @@ Allows for player to jump to avoid obstacles moving horizontally.
 Objects that add more life to the character.
 
 ## Data structure
-Main
+<h4>Main</h4>
 - Building Splash Screen
 - Building Game Screen
 - Building Game Over Screen
-Game
+<h4>Game</h4>
 - properties: player, obstacles, canvas, context, gameOver
 - Start Loop
 - Clear Canvas
 - Update Canvas
 - Draw Canvas
 - Check Collisions
-Player
+<h4>Player</h4>
 - properties: player, obstacles, canvas, context, gameOver, x, y, direction, speed, size
 - Draw canvas
 - Update Canvas
 - Set Direction
 - Set Lives
 - Check Collisions
-Obstancles
+<h4>Obstancles</h4>
 - properties: canvas, context, gameOver, x, y, direction, speed, size
 - Draw canvas
 - Update Canvas
