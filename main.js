@@ -1,77 +1,47 @@
-"use strict";
-
 function main() {
-
+    
     const mainElement = document.querySelector('main');
-
-    function buildDom(html) {
+    // Method to change screens in every state
+    function buildDOM(html) {
         mainElement.innerHTML = html;
         return mainElement;
     }
+    // Builds splash screen through load event
     function buildSplashScreen() {
-        const splashScreen = buildDom(`
-            <section>
-                <h1>Don't Kill Kenny</h1>
-                <button class="start-button">Start</button>
-            </section>
+        const splashScreen = buildDOM(`
+        <section class="splash-screen">
+        <div class="inner-box"><h1>Don't Kill Kenny!</h1>
+        <button>Start</button></div>
+        </section>
         `);
-
-        const startButton = document.querySelector('.start-button');
-
+        const startButton = document.querySelector('button');
         startButton.addEventListener('click', buildGameScreen);
     }
-
+/*
     function buildGameScreen() {
-        const gameScreen = buildDom(`
-          <section class='game-container'>
-            <canvas></canvas>
-          </section>
+        const gameScreen = buildDOM(`
+        <section class="game-container>
+        <canvas></canvas>
+        </section>
         `);
-    
-        const gameContainerElement = document.querySelector('.game-container');
-    
-        const width = window.innerWidth
-        const height = window.innerHeight;
-    
+        // Sets the dimensions of the canvas
         const canvasElement = document.querySelector('canvas');
-    
+        const width = window.innerWidth;
+        const height = window.innerHeight;
         canvasElement.setAttribute('width', width);
         canvasElement.setAttribute('height', height);
-    
+        // Get properties and function from Game constructor
         const game = new Game(canvasElement);
         game.startLoop();
-    
-    
-        document.addEventListener('keydown', function(event){
-      
-          if(event.keyCode === 37) {
-            game.player.setDirection(-1);
-          } else if (event.keyCode === 39) {
-            game.player.setDirection(1);
-          }
-        });
 
-        document.addEventListener('keyup', function(event) {
-            if (event.keyCode === 37 || event.keyCode === 39) {
-                game.player.setDirection(0);
-            }
-        })
-      }
+        // Key functions
+        
+
+    }
 
     function buildGameOverScreen() {
-        const gameOverScreen = buildDom(`
-            <section>
-                <h1>Game Over</h1>
-                <button class="restart-button">Restart</button>
-            </section>
-        `)
 
-        const restartButton = document.querySelector('.restart-button');
-
-        restartButton.addEventListener('click', buildGameScreen);
-    }
+    }   */
     buildSplashScreen();
 }
-
 window.addEventListener('load', main);
-
