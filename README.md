@@ -1,15 +1,65 @@
-# Ironhack-Game-Project
+# Ironhack Game Project: Don't Kill Kenny!
 
-# Don't Kill Kenny
+## Description
+This desktop game is made by Vanilla JS, HTML, and CSS. This objective of this game is to help Kenny avoid deadly objects falling from the sky. A single player game which allows the player to move bi-directionally.
 
-This desktop game is made by Vanilla JS, HTML, and CSS. This objective of this game is to help Kenny avoid deadly objects falling from the sky. The player can move can left and right by using their keys.
+## MVP (DOM - CANVAS)
+Use of Canvas for animation of falling objects (vertically and diagonally) and moving character (horizontally).
+Allows for collision detection.
 
-## Methods
+## Backlog
+Allows for player to jump to avoid obstacles moving horizontally.
+Objects that add more life to the character.
 
-## Features
+## Data structure
+Main
+- Building Splash Screen
+- Building Game Screen
+- Building Game Over Screen
+Game
+- properties: player, obstacles, canvas, context, gameOver
+- Start Loop
+- Clear Canvas
+- Update Canvas
+- Draw Canvas
+- Check Collisions
+Player
+- properties: player, obstacles, canvas, context, gameOver, x, y, direction, speed, size
+- Draw canvas
+- Update Canvas
+- Set Direction
+- Set Lives
+- Check Collisions
+Obstancles
+- properties: canvas, context, gameOver, x, y, direction, speed, size
+- Draw canvas
+- Update Canvas
 
-## Contributing
+## States y States Transitions
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+- splashScreen
+- gameScreen
+- gameoverScreen
 
-Please make sure to update tests as appropriate.
+## Task
+
+- HTML and CSS basic framework
+- Vanila JS and Canvas prep
+- Adding in methods for diagonal movements of obstacles
+- Adding in collision detection for these objects
+- Adding in animations and images for game background, character, and obstacles
+- Work on backlogs
+
+## Links
+
+### Trello
+https://trello.com/b/VHLeCPHh/ironhack-game-project
+
+### Git
+URls for the project repo and deploy
+[Link Repo](http://github.com)
+[Link Deploy](http://github.com)
+
+### Slides
+URls for the project presentation (slides)
+[Link Slides.com](http://slides.com)
