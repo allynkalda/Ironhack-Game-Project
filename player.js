@@ -32,7 +32,7 @@ Player.prototype.setLives = function() {
     this.lives--;
 }
 
-Player.prototype.checkCollisionWithEnemy = function(enemy) {
+Player.prototype.checkCollisions = function(enemy) {
     const collisionRight = this.x + this.width/2 > enemy.x - enemy.size/2;
     const collisionLeft = this.x - this.width/2 < enemy.x + enemy.size/2;
     const collisionTop = this.y - this.height/2 < enemy.y + enemy.size/2;

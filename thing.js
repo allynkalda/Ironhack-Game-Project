@@ -1,4 +1,4 @@
-function Obstacles(canvas) {
+function Obstacles(canvas, x) {
     this.speed = 3;
     this.size = 50;
     this.direction = 1;

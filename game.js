@@ -1,12 +1,13 @@
 function Game(canvas) {
-    this.canvas = canvas;
-    this.ctx = this.canvas.getContext('2d');
     this.player = null;
     this.obstacles = [];
+    this.canvas = canvas;
+    this.ctx = this.canvas.getContext('2d');
     this.gameOver = false;
 }
 
 Game.prototype.startLoop = function() {
+    
     this.player = new Player(this.canvas);
 
     const loop = () => {

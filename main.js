@@ -1,8 +1,8 @@
 function main() {
     
-    const mainElement = document.querySelector('main');
     // Method to change screens in every state
     function buildDOM(html) {
+        const mainElement = document.querySelector('main');
         mainElement.innerHTML = html;
         return mainElement;
     }
@@ -22,7 +22,7 @@ function main() {
     // Builds game screen through click event
     function buildGameScreen() {
         const gameScreen = buildDOM(`
-        <section class="game-container>
+        <section class="game-container">
         <canvas></canvas>
         </section>
         `);
