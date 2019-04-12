@@ -1,7 +1,5 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+/* CSS Reset */
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -47,6 +45,51 @@ table {
 	border-spacing: 0;
 }
 
+/* Game CSS */
+h1 {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 3em;
+    padding: 40px;
+    text-align: center;
+    color: #a83f55;
+}
+button {
+	margin-top: 10px;
+	height: 50px;
+	width: 100px;
+	border-radius: 10px;
+	background-size: 42px 42px;
+	background-color: #F2C14E;
+	border: none;
+	font-size: 20px;
+	font-family: Ubuntu, serif;
+}
+button:hover {
+	background-color: #EE7F53;
+}
+button:focus { 
+	outline:none;
+}
+.splash-screen {
+    background-image: url("./Bus-stop.jpg");
+    background-repeat: no-repeat;
+    background-color:black;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.inner-box {
+    height: 60vh;
+    width: 70vh;
+    background-color:rgb(225,225,225,0.7);
+    border-radius: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 canvas {
     background-image: url("./Bus-stop.jpg");
     background-repeat: no-repeat;
