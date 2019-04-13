@@ -43,11 +43,15 @@ function main() {
                 game.player.setDirection(-1);
             } else if (event.keyCode === 39) {
                 game.player.setDirection(1);
-            } 
+            } else if (event.keyCode === 38) {
+                game.player.setDirection(-4);
+            }
         });
         document.addEventListener('keyup', function(event) {
             if (event.keyCode === 37 || event.keyCode === 39) {
                 game.player.setDirection(0);
+            } else if (event.keyCode === 38) {
+                game.player.setDirection(4);  
             }
         })
     }

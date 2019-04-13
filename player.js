@@ -21,22 +21,32 @@ Player.prototype.draw = function() {
 }
 
 Player.prototype.update = function() {
-    this.x = this.x + this.direction * this.speed;
+    if (this.direction === -4) {
+        this.y = this.y + this.direction * this.speed;   
+    } else if (this.direction === 4) {
+        this.y = this.y + 4;
+    } else {
+        this.x = this.x + this.direction * this.speed;
+    } 
 }
+
+// same as updatePlayer.prototype.updateJump = function() {
+//   this.y = this.y + this.direction * this.speed;
+//}
 
 Player.prototype.setDirection = function(newDirection) {
     this.direction = newDirection;
-  }
+}
 
 Player.prototype.setLives = function() {
     this.lives--;
 }
 
 Player.prototype.checkCollisions = function(enemy) {
-    const collisionRight = this.x + this.width/2 > enemy.x - enemy.size/2;
-    const collisionLeft = this.x - this.width/2 < enemy.x + enemy.size/2;
-    const collisionTop = this.y - this.height/2 < enemy.y + enemy.size/2;
-    const collisionBottom = this.y + this.height/2 > enemy.y - enemy.size/2;
+    const collisionRight = this.x + this.width/2 > enemy.x - enemy.width/2;
+    const collisionLeft = this.x - this.width/2 < enemy.x + enemy.width/2;
+    const collisionTop = this.y - this.height/2 < enemy.y + enemy.height/2;
+    const collisionBottom = this.y + this.height/2 > enemy.y - enemy.height/2;
 
     return collisionRight && collisionLeft && collisionTop && collisionBottom;
 }

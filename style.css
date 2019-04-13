@@ -96,7 +96,7 @@ canvas {
     background-color:black;
     background-size: cover;
 }
-#kenny {
+.hide {
     visibility: hidden;
 }
 .shake {
