@@ -9,30 +9,37 @@ function Player(canvas) {
     this.y = this.canvas.height - 100;
     this.ctx = this.canvas.getContext('2d');
     this.speed = 3;
+    this.ySpeed = 5;
     this.direction = 0;
+    this.originY = 0;
+    this.gravity = 0.9;
+
 }
 
 Player.prototype.draw = function() {
     let img = document.getElementById('kenny');
     this.ctx.drawImage(img, this.x-this.width/2, this.y-this.height/2, this.width, this.height);
-   // this.ctx.fillStyle = 'blue';
-   // this.ctx.fillRect(this.x - this.size/2, this.y-this.size/2, this.size, this.size);
+}
 
+Player.prototype.dead = function() {
+    let img = document.getElementById('deadkenny');
+    this.ctx.drawImage(img, this.x-this.width/2, this.y-this.height/2, this.width, this.height);
 }
 
 Player.prototype.update = function() {
-    if (this.direction === -4) {
-        this.y = this.y + this.direction * this.speed;   
-    } else if (this.direction === 4) {
-        this.y = this.y + 4;
-    } else {
+    //if (this.direction === -6) {
+        // this.y = this.y + this.direction * this.speed;   
+    //} else {
         this.x = this.x + this.direction * this.speed;
-    } 
-}
+    //} 
 
-// same as updatePlayer.prototype.updateJump = function() {
-//   this.y = this.y + this.direction * this.speed;
-//}
+    this.y += this.ySpeed
+    if (this.y < this.canvas.height - 100) {
+        this.ySpeed += this.gravity
+    } else {
+        this.ySpeed = 0;
+    }
+}
 
 Player.prototype.setDirection = function(newDirection) {
     this.direction = newDirection;

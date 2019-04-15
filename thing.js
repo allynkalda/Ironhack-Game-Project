@@ -1,18 +1,18 @@
-function Obstacles(canvas, y) {
-    this.speed = 3;
-    this.width = 200;
-    this.height = 100;
+function Obstacles(canvas) {
+    this.speed = 4;
+    this.width = 130;
+    this.height = 70;
     this.direction = 1;
     this.canvas = canvas;
     this.ctx = this.canvas.getContext('2d');
-    this.x = 10;
-    this.y = 300;
+    this.x = 0;
+    this.y = this.canvas.height - 100;
 }
 
 
 Obstacles.prototype.draw = function() {
     let img = document.getElementById('car');
-    this.ctx.drawImage(img, x, y, this.width, this.height);
+    this.ctx.drawImage(img, this.x-this.width/2, this.y-this.height/2, this.width, this.height);
 }
 
 Obstacles.prototype.update = function() {

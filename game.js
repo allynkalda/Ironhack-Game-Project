@@ -12,22 +12,23 @@ Game.prototype.startLoop = function() {
     this.player = new Player(this.canvas);
 
     const loop = () => {
-        if (Math.random() > 0.997) {
-            this.obstacles.push(new Obstacles(this.canvas, (Math.random() * this.canvas.height) + 15));
+        
+        if (Math.random() > 0.998) {
+             this.obstacles.push(new Obstacles(this.canvas, (Math.random() * this.canvas.height) - 80));
         } 
-        if (Math.random() > 0.997) {
+        if (Math.random() > 0.998) {
             const anotherRandomNum = (Math.random() * this.canvas.width) + 15;
             this.newobstacles.push(new Enemies(this.canvas, (Math.random() * this.canvas.width) + 15, 'piggy'));
         }
-        if (Math.random() > 0.997) {
+        if (Math.random() > 0.998) {
             const anotherRandomNum = (Math.random() * this.canvas.width) + 15;
             this.newobstacles.push(new Enemies(this.canvas, (Math.random() * this.canvas.width) + 15, 'piano'));
         }
-        if (Math.random() > 0.997) {
+        if (Math.random() > 0.998) {
             const anotherRandomNum = (Math.random() * this.canvas.width) + 15;
             this.newobstacles.push(new Enemies(this.canvas, (Math.random() * this.canvas.width) + 15, 'anvil'));
         }
-        if (Math.random() > 0.997) {
+        if (Math.random() > 0.998) {
             const anotherRandomNum = (Math.random() * this.canvas.width) + 15;
             this.newobstacles.push(new Enemies(this.canvas, (Math.random() * this.canvas.width) + 15, 'elephant'));
         }
@@ -38,6 +39,8 @@ Game.prototype.startLoop = function() {
 
         if (this.gameOver === false) {
             window.requestAnimationFrame(loop);
+        } else {
+            setTimeout(this.endOfGame, 1500);
         }
     }
     window.requestAnimationFrame(loop);
@@ -58,7 +61,9 @@ Game.prototype.updateCanvas = function() {
 }
 
 Game.prototype.drawCanvas = function() {
-    this.player.draw();
+    if (this.gameOver === false) {
+        this.player.draw();
+    } 
     this.obstacles.forEach( function(objects) {
         objects.draw();
     });
@@ -93,5 +98,5 @@ Game.prototype.checkCollisions = function() {
 }
 
 Game.prototype.setGameOverCallback = function(callback) {
-    
+    this.endOfGame = callback;
 }
