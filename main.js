@@ -51,7 +51,10 @@ function main() {
             if (event.keyCode === 37 || event.keyCode === 39) {
                 game.player.setDirection(0);
             } else if (event.keyCode === 38) {
-                game.player.setDirection(4);  
+                game.player.setDirection(4); 
+                  /*  if (game.player.y === 0) {
+                        game.player.setDirection(0);
+                    }*/
             }
         })
     }
