@@ -45,6 +45,7 @@ Game.prototype.startLoop = function() {
         } else {
             this.player.dead();
             setTimeout(this.endOfGame, 2000);
+            setTimeout(this.killedSound, 2000)
         }
         if (this.timer === 0) {
             setTimeout(this.endofGame, 2000);
@@ -139,4 +140,9 @@ Game.prototype.setGameOverCallback = function(callback) {
 
 Game.prototype.setLevelUpCallback = function(callback) {
     this.LevelUpGame = callback;
+}
+
+Game.prototype.killedSound = function() {
+    var killed = document.getElementById('killed');
+    killed.play();
 }

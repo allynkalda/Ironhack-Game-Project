@@ -48,11 +48,13 @@ Player.prototype.setDirection = function(newDirection) {
 
 Player.prototype.setLives = function() {
     this.lives--;
+    this.hitSound();
     document.getElementById('lives').innerHTML = "Kenny's lives: " + this.lives;
 }
 
 Player.prototype.addLives = function() {
     this.lives++;
+    this.jumpSound();
     document.getElementById('lives').innerHTML = "Kenny's lives: " + this.lives;
 }
 
@@ -63,4 +65,14 @@ Player.prototype.checkCollisions = function(enemy) {
     const collisionBottom = this.y + this.height/2 > (enemy.y + 10) - enemy.height/2;
 
     return collisionRight && collisionLeft && collisionTop && collisionBottom;
+}
+
+Player.prototype.hitSound = function() {
+    var hit = document.getElementById('ouch');
+    hit.play();
+}
+
+Player.prototype.jumpSound = function() {
+    var jump = document.getElementById('jump');
+    jump.play();
 }
