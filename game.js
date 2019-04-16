@@ -6,10 +6,13 @@ function Game(canvas) {
     this.canvas = canvas;
     this.ctx = this.canvas.getContext('2d');
     this.gameOver = false;
+    this.timer = 60;
 }
 // Start animation loop
 Game.prototype.startLoop = function() {
     
+    this.setIntervals();
+
     this.player = new Player(this.canvas);
 
     const loop = () => {
@@ -111,6 +114,16 @@ Game.prototype.checkCollisions = function() {
         } 
      })
      
+}
+// Setting intervals for timer
+Game.prototype.setIntervals = function() {
+    const setSeconds = () => {
+        console.log()
+        this.timer -= 1;
+        let seconds = document.getElementById('seconds');
+        seconds.innerHTML = `Countdown: ${this.timer}`;
+        }
+    let intervals = setInterval(setSeconds, 1000);
 }
 
 Game.prototype.setGameOverCallback = function(callback) {
