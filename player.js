@@ -14,7 +14,7 @@ function Player(canvas) {
     this.originY = 0;
     this.gravity = 0.9;
 }
-
+// Image of Kenny alive
 Player.prototype.draw = function() {
     let img = document.getElementById('kenny');
     this.ctx.drawImage(img, this.x-this.width/2, this.y-this.height/2, this.width, this.height);
@@ -24,13 +24,15 @@ Player.prototype.dead = function() {
     let img = document.getElementById('deadkenny');
     this.ctx.drawImage(img, this.x-this.width/2, this.y-this.height/2, this.width, this.height);
 }
+// Replace image to bonked Kenny (MIGHT NEED TO ERASE)
+Player.prototype.bonk = function() {
+    let img = document.getElementById('bonk');
+    this.ctx.drawImage(img, this.x-this.width/2, this.y-this.height/2, this.width, this.height);
+}
 
 Player.prototype.update = function() {
-    //if (this.direction === -6) {
-        // this.y = this.y + this.direction * this.speed;   
-    //} else {
-        this.x = this.x + this.direction * this.speed;
-    //} 
+
+    this.x = this.x + this.direction * this.speed;
 
     this.y += this.ySpeed
     if (this.y < this.canvas.height - 100) {

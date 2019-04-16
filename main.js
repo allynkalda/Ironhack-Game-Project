@@ -21,6 +21,8 @@ function main() {
   }
   // Builds game screen through click event
   function buildGameScreen() {
+ 
+    
     const gameScreen = buildDOM(`
         <section class="game-container">
         <div id="header"><h2 id="lives">Kenny's Lives: 3</h2></div>
@@ -44,22 +46,27 @@ function main() {
     game.startLoop();
 
     game.setGameOverCallback(buildGameOverScreen);
-    // Key functions
+    // Key functions plus boolean to not allow jump twice in a row
+    let jump = false;
     document.addEventListener('keydown', function (event) {
       if (event.keyCode === 37) {
         game.player.setDirection(-1);
+        jump = false;
       } else if (event.keyCode === 39) {
         game.player.setDirection(1);
+        jump = false;
       } else if (event.keyCode === 38) {
-        game.player.ySpeed = -25;
+        if (jump === false) {
+          game.player.ySpeed = -25;
+          jump = true;
+        } else {
+          return;
+        }
       }
     });
     document.addEventListener('keyup', function (event) {
       if (event.keyCode === 37 || event.keyCode === 39) {
         game.player.setDirection(0);
-      } else if (event.keyCode === 38) {
-        // game.player.setDirection(0);
-        // game.player.updateJump();
       }
      
     })
