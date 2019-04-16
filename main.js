@@ -21,7 +21,6 @@ function main() {
   }
   // Builds game screen through click event
   function buildGameScreen() {
- 
     
     const gameScreen = buildDOM(`
         <section class="game-container">
@@ -48,6 +47,7 @@ function main() {
     game.startLoop();
 
     game.setGameOverCallback(buildGameOverScreen);
+    game.setLevelUpCallback(buildLevelUpScreen);
     // Key functions plus boolean to not allow jump twice in a row
     let jump = false;
     document.addEventListener('keydown', function (event) {
@@ -69,11 +69,23 @@ function main() {
     document.addEventListener('keyup', function (event) {
       if (event.keyCode === 37 || event.keyCode === 39) {
         game.player.setDirection(0);
-      }
-     
+      } 
     })
   }
-  // Build game over screen through life === 0, has restart button
+// Build level up screen
+  function buildLevelUpScreen() {
+    const levelUpScreen = buildDOM(`
+        <section class="splash-screen">
+        <div class="inner-box">
+        <h1>Wow! You are on to the next level!</h1>
+        <button id="continue">Continue</button>
+        </div>
+        </section>
+    `)
+    const continueButton = document.getElementById('continue');
+    continueButton.addEventListener('click', buildGameScreen);
+  }
+// Build game over screen through life === 0, has restart button
   function buildGameOverScreen() {
     const gameOverScreen = buildDOM(`
         <section class="splash-screen">

@@ -10,7 +10,7 @@ function Game(canvas) {
 }
 // Start animation loop
 Game.prototype.startLoop = function() {
-    
+    // sets timer when started;
     this.setIntervals();
 
     this.player = new Player(this.canvas);
@@ -45,6 +45,10 @@ Game.prototype.startLoop = function() {
         } else {
             this.player.dead();
             setTimeout(this.endOfGame, 2000);
+        }
+        if (this.timer === 0) {
+            setTimeout(this.endofGame, 2000);
+            this.LevelUpGame();
         }
     }
     window.requestAnimationFrame(loop);
@@ -118,14 +122,21 @@ Game.prototype.checkCollisions = function() {
 // Setting intervals for timer
 Game.prototype.setIntervals = function() {
     const setSeconds = () => {
-        console.log()
+        if (this.timer === 0) {
+            clearInterval(intervals);
+        } else {
         this.timer -= 1;
         let seconds = document.getElementById('seconds');
         seconds.innerHTML = `Countdown: ${this.timer}`;
         }
+    }
     let intervals = setInterval(setSeconds, 1000);
 }
 
 Game.prototype.setGameOverCallback = function(callback) {
     this.endOfGame = callback;
+}
+
+Game.prototype.setLevelUpCallback = function(callback) {
+    this.LevelUpGame = callback;
 }
