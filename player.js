@@ -13,14 +13,13 @@ function Player(canvas) {
     this.direction = 0;
     this.originY = 0;
     this.gravity = 0.9;
-
 }
 
 Player.prototype.draw = function() {
     let img = document.getElementById('kenny');
     this.ctx.drawImage(img, this.x-this.width/2, this.y-this.height/2, this.width, this.height);
 }
-
+// Replace image to dead Kenny
 Player.prototype.dead = function() {
     let img = document.getElementById('deadkenny');
     this.ctx.drawImage(img, this.x-this.width/2, this.y-this.height/2, this.width, this.height);
@@ -47,13 +46,19 @@ Player.prototype.setDirection = function(newDirection) {
 
 Player.prototype.setLives = function() {
     this.lives--;
+    document.getElementById('lives').innerHTML = "Kenny's lives: " + this.lives;
+}
+
+Player.prototype.addLives = function() {
+    this.lives++;
+    document.getElementById('lives').innerHTML = "Kenny's lives: " + this.lives;
 }
 
 Player.prototype.checkCollisions = function(enemy) {
-    const collisionRight = this.x + this.width/2 > enemy.x - enemy.width/2;
-    const collisionLeft = this.x - this.width/2 < enemy.x + enemy.width/2;
-    const collisionTop = this.y - this.height/2 < enemy.y + enemy.height/2;
-    const collisionBottom = this.y + this.height/2 > enemy.y - enemy.height/2;
+    const collisionRight = this.x + this.width/2 > (enemy.x + 10) - enemy.width/2;
+    const collisionLeft = this.x - this.width/2 < (enemy.x - 10) + enemy.width/2;
+    const collisionTop = this.y - this.height/2 < (enemy.y - 10) + enemy.height/2;
+    const collisionBottom = this.y + this.height/2 > (enemy.y + 10) - enemy.height/2;
 
     return collisionRight && collisionLeft && collisionTop && collisionBottom;
 }

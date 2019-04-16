@@ -1,5 +1,6 @@
 /* CSS Reset */
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@import url('https://fonts.googleapis.com/css?family=Russo+One');
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -46,8 +47,11 @@ table {
 }
 
 /* Game CSS */
+body, html {
+    height: 600px;
+}
 h1 {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Russo One', sans-serif;
     font-size: 3em;
     padding: 40px;
     text-align: center;
@@ -75,14 +79,14 @@ button:focus {
     background-repeat: no-repeat;
     background-color:black;
     background-size: cover;
-    height: 100vh;
+    height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .inner-box {
-    height: 60vh;
-    width: 70vh;
+    height: 70%;
+    width: 80%;
     background-color:rgb(225,225,225,0.7);
     border-radius: 1em;
     display: flex;
@@ -90,16 +94,40 @@ button:focus {
     justify-content: center;
     flex-direction: column;
 }
-canvas {
+.game-container {
     background-image: url("./Bus-stop.jpg");
     background-repeat: no-repeat;
     background-color:black;
     background-size: cover;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#header {
+    height: 50px;
+    width: 100%;
+    background-color: #93D6E6; 
+    text-align: right;
+    display: table;
+}
+h2 {
+    vertical-align: middle;
+    display: table-cell;
+    padding-right: 50px;
+    color: white;
+    font-family: 'Russo One', sans-serif;
+}
+canvas {
+    width: 100%;
+    height: auto;
+}
+#footer {
+    height: 50px;
+    width: 100%;
+    background-color: #49434C; 
+
 }
 .hide {
-    visibility: hidden;
-}
-.shake {
-    animation: shake 0.5s;
-    animation-iteration-count: infinite;
+    display: none;
 }

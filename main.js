@@ -23,13 +23,19 @@ function main() {
   function buildGameScreen() {
     const gameScreen = buildDOM(`
         <section class="game-container">
+        <div id="header"><h2 id="lives">Kenny's Lives: 3</h2></div>
         <canvas></canvas>
+        <div id="footer"></div>
         </section>
         `);
     // Sets the dimensions of the canvas
-    const width = window.innerWidth;
-    const height = window.innerHeight;
+    const gameContainerElement = document.querySelector('.game-container');
+    
+    const width = gameContainerElement.offsetWidth;
+    const height = gameContainerElement.offsetHeight;
+
     const canvasElement = document.querySelector('canvas');
+
     canvasElement.setAttribute('width', width);
     canvasElement.setAttribute('height', height);
 
@@ -45,9 +51,7 @@ function main() {
       } else if (event.keyCode === 39) {
         game.player.setDirection(1);
       } else if (event.keyCode === 38) {
-        game.player.ySpeed = -30
-        // game.player.originY = game.player.y;
-        // game.player.setDirection(-6);
+        game.player.ySpeed = -25;
       }
     });
     document.addEventListener('keyup', function (event) {
