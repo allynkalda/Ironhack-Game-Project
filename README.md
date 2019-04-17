@@ -52,7 +52,7 @@ Objects that add more life to the character.
 
 ## Links
 
-Play the game <a href="https://allynkalda.github.io/Ironhack-Game-Project/">here</>.
+Play the game <a href="https://allynkalda.github.io/Ironhack-Game-Project/">here<a/>.
 ### Trello
 https://trello.com/b/VHLeCPHh/ironhack-game-project
 
