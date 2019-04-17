@@ -106,17 +106,12 @@ button:focus {
 }
 .game-container {
     padding-top: 30px;
-    background-image: url("./Bus-stop.jpg");
-    background-repeat: no-repeat;
     background-color: #49434C;
-    background-size: contain;
     display:flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     height: 100vh;
-    background-attachment: fixed;
-    background-position: center;
 }
 #header {
     height: 40px;
@@ -124,6 +119,7 @@ button:focus {
     background-color: #93D6E6; 
     text-align: right;
     display: table;
+    padding: 10px 0px 10px 0px;
 }
 h2 {
     vertical-align: middle;
@@ -140,6 +136,11 @@ h2 {
 canvas {
     width: 960px;
     height: auto;
+    background-image: url("./Bus-stop.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+    background-position: center;
 }
 #footer {
     height: 10px;
