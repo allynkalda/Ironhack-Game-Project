@@ -6,7 +6,7 @@ function Game(canvas) {
     this.canvas = canvas;
     this.ctx = this.canvas.getContext('2d');
     this.gameOver = false;
-    this.timer = 10;
+    this.timer = 60;
 }
 // Start animation loop
 Game.prototype.startLoop = function() {
