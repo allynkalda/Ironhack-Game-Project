@@ -6,7 +6,7 @@ function Game(canvas) {
     this.canvas = canvas;
     this.ctx = this.canvas.getContext('2d');
     this.gameOver = false;
-    this.timer = 60;
+    this.timer = 30;
 }
 // Start animation loop
 Game.prototype.startLoop = function() {
@@ -40,17 +40,21 @@ Game.prototype.startLoop = function() {
         this.drawCanvas();
         this.checkCollisions();
 
+        if (this.timer === 0) {
+            this.gameOver = true;
+            setTimeout(this.LevelUpGame, 2000);
+            this.stopSound();
+            return;
+        }
+
         if (this.gameOver === false) {
             window.requestAnimationFrame(loop);
         } else {
-            this.player.dead();
             this.stopSound();
+            this.player.dead();
             setTimeout(this.endOfGame, 2000);
-            setTimeout(this.killedSound, 1000);
-        }
-        if (this.timer === 0) {
-            setTimeout(this.endofGame, 2000);
-            this.LevelUpGame();
+            setTimeout(this.killedSound, 2000);
+            this.timer = 0;
         }
     }
     window.requestAnimationFrame(loop);
@@ -76,7 +80,7 @@ Game.prototype.updateCanvas = function() {
 Game.prototype.drawCanvas = function() {
     if (this.gameOver === false) {
         this.player.draw();
-    } 
+    }
     this.obstacles.forEach( function(objects) {
         objects.draw();
     });

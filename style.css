@@ -55,6 +55,13 @@ h1 {
     text-align: center;
     color: #a83f55;
 }
+h3 {
+    font-family: 'Russo One', sans-serif;
+    font-size: 3em;
+    padding: 40px;
+    text-align: center;
+    color: #a83f55;
+}
 p {
     font-family: Ubuntu, serif;
     padding-bottom: 30px;    

@@ -79,8 +79,9 @@ function main() {
     const levelUpScreen = buildDOM(`
         <section class="splash-screen">
         <div class="inner-box">
-        <h1>Wow! You are on to the next level!</h1>
-        <button id="continue">Continue</button>
+        <img id="kenny-wave" src="./Photos/kenny-wave.gif">
+        <h3>Way to go! You saved Kenny!</h3>
+        <button id="continue">Restart</button>
         </div>
         </section>
     `)
