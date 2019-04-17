@@ -12,7 +12,7 @@ function Game(canvas) {
 Game.prototype.startLoop = function() {
     // sets timer when started;
     this.setIntervals();
-
+    this.startSound();
     this.player = new Player(this.canvas);
 
     const loop = () => {
@@ -27,7 +27,7 @@ Game.prototype.startLoop = function() {
             this.newobstacles.push(new Enemies(this.canvas, (Math.random() * this.canvas.width) + 15, 'piano'));
         }
         if (Math.random() > 0.998) {
-            this.newobstacles.push(new Enemies(this.canvas, (Math.random() * this.canvas.width) + 15, 'anvil'));
+            this.newobstacles.push(new Enemies(this.canvas, (Math.random() * this.canvas.width) + 15, 'meteor'));
         }
         if (Math.random() > 0.998) {
             this.newobstacles.push(new Enemies(this.canvas, (Math.random() * this.canvas.width) + 15, 'elephant'));
@@ -44,8 +44,9 @@ Game.prototype.startLoop = function() {
             window.requestAnimationFrame(loop);
         } else {
             this.player.dead();
+            this.stopSound();
             setTimeout(this.endOfGame, 2000);
-            setTimeout(this.killedSound, 2000)
+            setTimeout(this.killedSound, 1000);
         }
         if (this.timer === 0) {
             setTimeout(this.endofGame, 2000);
@@ -145,4 +146,15 @@ Game.prototype.setLevelUpCallback = function(callback) {
 Game.prototype.killedSound = function() {
     var killed = document.getElementById('killed');
     killed.play();
+}
+
+Game.prototype.startSound = function() {
+    var start = document.getElementById('jaunty');
+    start.volume = 0.2;
+    start.play();
+}
+
+Game.prototype.stopSound = function() {
+    var start = document.getElementById('jaunty');
+    start.pause();
 }
