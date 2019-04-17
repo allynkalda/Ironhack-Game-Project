@@ -6,7 +6,7 @@ function Game(canvas) {
     this.canvas = canvas;
     this.ctx = this.canvas.getContext('2d');
     this.gameOver = false;
-    this.timer = 30;
+    this.timer = 10;
 }
 // Start animation loop
 Game.prototype.startLoop = function() {
@@ -16,7 +16,7 @@ Game.prototype.startLoop = function() {
     this.player = new Player(this.canvas);
 
     const loop = () => {
-        
+        // Objects
         if (Math.random() > 0.998) {
              this.obstacles.push(new Obstacles(this.canvas, (Math.random() * this.canvas.height)));
         } 
@@ -39,14 +39,15 @@ Game.prototype.startLoop = function() {
         this.updateCanvas();
         this.drawCanvas();
         this.checkCollisions();
-
+        // Ends game when timer is 0, winning condition
         if (this.timer === 0) {
             this.gameOver = true;
-            setTimeout(this.LevelUpGame, 2000);
             this.stopSound();
+            setTimeout(this.LevelUpGame, 2000);
+            setTimeout(this.winSound, 2000);
             return;
         }
-
+        // Game ends when gameOver is true, losing condition
         if (this.gameOver === false) {
             window.requestAnimationFrame(loop);
         } else {
@@ -161,4 +162,9 @@ Game.prototype.startSound = function() {
 Game.prototype.stopSound = function() {
     var start = document.getElementById('jaunty');
     start.pause();
+}
+
+Game.prototype.winSound = function() {
+    var win = document.getElementById('win');
+    win.play();
 }

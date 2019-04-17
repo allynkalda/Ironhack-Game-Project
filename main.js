@@ -12,7 +12,8 @@ function main() {
         <section class="splash-screen">
         <div class="inner-box">
         <h1>Don't Kill Kenny!</h1><br>
-        <p>Use the up, right, left direction button to move Kenny out of harm's way</p>
+        <img id="kenny-dancing" src="./Photos/kenny-dancing.gif">
+        <p>Use the up, right, left direction button to move Kenny out of harm's way. Catch Cartman angels to gain lives.</p>
         <button id="start-button">Start</button>
         </div>
         </section>

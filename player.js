@@ -29,7 +29,7 @@ Player.prototype.bonk = function() {
     let img = document.getElementById('bonk');
     this.ctx.drawImage(img, this.x-this.width/2, this.y-this.height/2, this.width, this.height);
 }
-
+// Player movement + jumping
 Player.prototype.update = function() {
 
     this.x = this.x + this.direction * this.speed;
@@ -41,23 +41,23 @@ Player.prototype.update = function() {
         this.ySpeed = 0;
     }
 }
-
+// Player direction
 Player.prototype.setDirection = function(newDirection) {
     this.direction = newDirection;
 }
-
+// Substracts lives
 Player.prototype.setLives = function() {
     this.lives--;
     this.hitSound();
     document.getElementById('lives').innerHTML = "Kenny's lives: " + this.lives;
 }
-
+// Add lives
 Player.prototype.addLives = function() {
     this.lives++;
     this.jumpSound();
     document.getElementById('lives').innerHTML = "Kenny's lives: " + this.lives;
 }
-
+// Checks Collisions with objects
 Player.prototype.checkCollisions = function(enemy) {
     const collisionRight = this.x + this.width/2 > (enemy.x + 10) - enemy.width/2;
     const collisionLeft = this.x - this.width/2 < (enemy.x - 10) + enemy.width/2;
