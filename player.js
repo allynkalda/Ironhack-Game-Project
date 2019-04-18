@@ -3,7 +3,7 @@
 function Player(canvas) {
     this.lives = 3;
     this.height = 80;
-    this.width = 59;
+    this.width = 65;
     this.canvas = canvas;
     this.x = this.canvas.width/2;
     this.y = this.canvas.height - 100;

@@ -1,6 +1,6 @@
 function Obstacles(canvas) {
     this.speed = 4;
-    this.width = 130;
+    this.width = 140;
     this.height = 70;
     this.direction = 1;
     this.canvas = canvas;
