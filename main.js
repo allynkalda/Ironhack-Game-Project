@@ -26,12 +26,11 @@ function main() {
     
     const gameScreen = buildDOM(`
         <section class="game-container">
-        <div id="pre-header"></div>
         <div id="header">
         <h2 id="seconds">Countdown: 60</h2>
         <h2 id="lives">Kenny's Lives: 3</h2></div>
         <canvas></canvas>
-        <div id="footer"></div>
+        
         </section>
         `);
     // Sets the dimensions of the canvas
