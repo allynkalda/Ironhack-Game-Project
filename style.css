@@ -134,12 +134,11 @@ button:focus {
     background-color: #49434C;
 }
 #header {
-    height: 40px;
+    height: 60px;
     width: 950px;
     background-color: #93D6E6; 
     text-align: right;
     display: table;
-
 }
 h2 {
     vertical-align: bottom;
@@ -156,18 +155,12 @@ h2 {
 canvas {
     width: 950px;
     height: auto;
-    padding-top: 60px;
+    padding-top: 120px;
     background-image: url("./Bus-stop.jpg");
     background-repeat: no-repeat;
     background-size: contain;
     background-attachment: fixed;
-    background-position: center;
-    background-color: #93D6E6;
-}
-#footer {
-    height: 10px;
-    width: 100%;
-    background-color: #49434C; 
+    background-position: center
 }
 .hide {
     display: none;

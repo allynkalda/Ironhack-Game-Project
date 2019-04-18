@@ -20,7 +20,7 @@ Game.prototype.startLoop = function() {
 
     const loop = () => {
 
-        if (this.loopC == 700) {
+        if (this.loopC == 600) {
             this.numberObjects = 0.994;
         } else if (this.loopC === 2000) {
             this.numberObjects = 0.990;
@@ -31,22 +31,24 @@ Game.prototype.startLoop = function() {
         console.log(this.loopC);
         if (Math.random() > 0.9982) {
              this.obstacles.push(new Obstacles(this.canvas, (Math.random() * this.canvas.height)));
-        } 
-        if (Math.random() > this.numberObjects) {
-            this.newobstacles.push(new Enemies(this.canvas, (Math.random() * this.canvas.width) + 15, 'piggy'));
         }
-        if (Math.random() > this.numberObjects) {
-            this.newobstacles.push(new Enemies(this.canvas, (Math.random() * this.canvas.width) + 15, 'piano'));
+
+        this.generateEnemy = function (image) {
+            if (Math.random() > this.numberObjects) {
+                this.newobstacles.push(new Enemies(this.canvas, (Math.random() * this.canvas.width) + 15, image));
+            }
         }
-        if (Math.random() > this.numberObjects) {
-            this.newobstacles.push(new Enemies(this.canvas, (Math.random() * this.canvas.width) + 15, 'meteor'));
-        }
-        if (Math.random() > this.numberObjects) {
-            this.newobstacles.push(new Enemies(this.canvas, (Math.random() * this.canvas.width) + 15, 'elephant'));
-        }
+
+        this.generateEnemy('elephant');
+        this.generateEnemy('meteor');
+        this.generateEnemy('piano');
+        this.generateEnemy('piggy');
+
         if (Math.random() > 0.998) {
             this.addlife.push(new Life(this.canvas, (Math.random() * this.canvas.width) + 15, 'cupid'));
         }
+
+      
         this.clearCanvas();
         this.updateCanvas();
         this.drawCanvas();
@@ -103,6 +105,7 @@ Game.prototype.drawCanvas = function() {
     this.addlife.forEach(function (objects) {
         objects.draw();
     });
+
 }
 
 Game.prototype.checkCollisions = function() {

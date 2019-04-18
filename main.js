@@ -30,7 +30,6 @@ function main() {
         <h2 id="seconds">Countdown: 60</h2>
         <h2 id="lives">Kenny's Lives: 3</h2></div>
         <canvas></canvas>
-        
         </section>
         `);
     // Sets the dimensions of the canvas
