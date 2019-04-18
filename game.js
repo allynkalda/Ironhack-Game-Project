@@ -96,16 +96,14 @@ Game.prototype.drawCanvas = function() {
     if (this.gameOver === false) {
         this.player.draw();
     }
-    this.obstacles.forEach( function(objects) {
-        objects.draw();
-    });
-    this.newobstacles.forEach(function (objects) {
-        objects.draw();
-    });
-    this.addlife.forEach(function (objects) {
-        objects.draw();
-    });
-
+    this.drawFunc = (array) => {
+        array.forEach( function(objects) {
+            objects.draw();
+        });
+    }
+    this.drawFunc(this.obstacles);
+    this.drawFunc(this.newobstacles);
+    this.drawFunc(this.addlife);
 }
 
 Game.prototype.checkCollisions = function() {

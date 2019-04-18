@@ -126,7 +126,6 @@ button:focus {
     flex-direction: column;
 }
 .game-container {
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -134,7 +133,7 @@ button:focus {
     background-color: #49434C;
 }
 #header {
-    height: 60px;
+    height: 15vh;
     width: 950px;
     background-color: #93D6E6; 
     text-align: right;
@@ -154,8 +153,7 @@ h2 {
 }
 canvas {
     width: 950px;
-    height: auto;
-    padding-top: 120px;
+    height: 85vh;
     background-image: url("./Bus-stop.jpg");
     background-repeat: no-repeat;
     background-size: contain;
