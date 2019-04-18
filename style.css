@@ -126,28 +126,23 @@ button:focus {
     flex-direction: column;
 }
 .game-container {
-    padding-top: 30px;
-    background-image: url("./Bus-stop.jpg");
-    background-repeat: no-repeat;
-    background-color: #49434C;
-    background-size: contain;
+    padding: 30px;
     display:flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     height: 100vh;
-    background-attachment: fixed;
-    background-position: center;
+    background-color: #49434C;
 }
 #header {
     height: 40px;
-    width: 960px;
+    width: 950px;
     background-color: #93D6E6; 
     text-align: right;
     display: table;
 }
 h2 {
-    vertical-align: middle;
+    vertical-align: bottom;
     display: table-cell;
     padding-right: 150px;
     color: #A83F55;
@@ -159,8 +154,13 @@ h2 {
     padding-left: 150px;
 }
 canvas {
-    width: 960px;
+    width: 950px;
     height: auto;
+    background-image: url("./Bus-stop.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+    background-position: center;
 }
 #footer {
     height: 10px;

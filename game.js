@@ -7,29 +7,41 @@ function Game(canvas) {
     this.ctx = this.canvas.getContext('2d');
     this.gameOver = false;
     this.timer = 60;
+    this.loopC = 0;
+    this.numberObjects = 0.998;
 }
 // Start animation loop
 Game.prototype.startLoop = function() {
     // sets timer when started;
     this.setIntervals();
     this.startSound();
+
     this.player = new Player(this.canvas);
 
     const loop = () => {
+
+        if (this.loopC == 700) {
+            this.numberObjects = 0.994;
+        } else if (this.loopC === 2000) {
+            this.numberObjects = 0.990;
+        }
+       
         // Objects
-        if (Math.random() > 0.998) {
+        this.loopC ++;
+        console.log(this.loopC);
+        if (Math.random() > 0.9982) {
              this.obstacles.push(new Obstacles(this.canvas, (Math.random() * this.canvas.height)));
         } 
-        if (Math.random() > 0.998) {
+        if (Math.random() > this.numberObjects) {
             this.newobstacles.push(new Enemies(this.canvas, (Math.random() * this.canvas.width) + 15, 'piggy'));
         }
-        if (Math.random() > 0.998) {
+        if (Math.random() > this.numberObjects) {
             this.newobstacles.push(new Enemies(this.canvas, (Math.random() * this.canvas.width) + 15, 'piano'));
         }
-        if (Math.random() > 0.998) {
+        if (Math.random() > this.numberObjects) {
             this.newobstacles.push(new Enemies(this.canvas, (Math.random() * this.canvas.width) + 15, 'meteor'));
         }
-        if (Math.random() > 0.998) {
+        if (Math.random() > this.numberObjects) {
             this.newobstacles.push(new Enemies(this.canvas, (Math.random() * this.canvas.width) + 15, 'elephant'));
         }
         if (Math.random() > 0.998) {
