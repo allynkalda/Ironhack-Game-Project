@@ -56,11 +56,5 @@ Play the game <a href="https://allynkalda.github.io/Ironhack-Game-Project/">here
 ### Trello
 https://trello.com/b/VHLeCPHh/ironhack-game-project
 
-### Git
-URls for the project repo and deploy
-[Link Repo](http://github.com)
-[Link Deploy](http://github.com)
-
 ### Slides
-URls for the project presentation (slides)
-[Link Slides.com](http://slides.com)
+<a href="https://docs.google.com/presentation/d/1bQnzEAMGM-gVfmzLApqWcXTQP7W3AYYjLDng66JaAjM/edit#slide=id.g568202fee7_0_370">Project presentation</a>
