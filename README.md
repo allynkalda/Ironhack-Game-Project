@@ -30,7 +30,7 @@ Objects that add more life to the character.
 - Set Direction</br>
 - Set Lives</br>
 - Check Collisions</br>
-<h4>Obstancles</h4>
+<h4>Obstacles</h4>
 - properties: canvas, context, gameOver, x, y, direction, speed, size</br>
 - Draw canvas</br>
 - Update Canvas</br>
